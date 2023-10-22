@@ -1,0 +1,20 @@
+[
+    {
+        "src": "/images/designs/day3.png",
+        "thumb": "/images/designs/thumbs/day3_thumb.jpg",
+        "alt": "day3.png",
+        "location": "",
+        "width": 7200,
+        "height": 5400,
+        "name": "day3.png"
+    },
+    {
+        "src": "/images/designs/triangle.png",
+        "thumb": "/images/designs/thumbs/triangle_thumb.jpg",
+        "alt": "triangle.png",
+        "location": "",
+        "width": 2250,
+        "height": 3000,
+        "name": "triangle.png"
+    }
+]
