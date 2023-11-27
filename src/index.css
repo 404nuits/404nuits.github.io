@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'rosie_brown';
-  src: url('./fonts/rosie_brown_serif_demo-webfont.woff2') format('woff2'),
-       url('./fonts/rosie_brown_serif_demo-webfont.woff') format('woff');
+  font-family: "rosie_brown";
+  src: url("./fonts/rosie_brown_serif_demo-webfont.woff2") format("woff2"),
+    url("./fonts/rosie_brown_serif_demo-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
+/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: #ffffff #000000;
@@ -24,7 +24,8 @@
   border-radius: 28px;
   border: 0px solid #000000;
 }
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   background: #a2e5ff88;
 }
 
@@ -90,12 +91,12 @@ a:hover {
 
 @keyframes from_bottom {
   0% {
-      opacity: 0;
-      transform: translateY(50%);
+    opacity: 0;
+    transform: translateY(50%);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -124,30 +125,6 @@ a:hover {
   margin: 5px;
 }
 
-
-
-.fj-gallery {
-  position: relative;
-  overflow: hidden;
-}
-.fj-gallery::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.fj-gallery .fj-gallery-item {
-  float: left;
-  top: 0;
-  left: 0;
-}
-.fj-gallery .fj-gallery-item > img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
-
 .outlet {
   margin-top: 40px;
   padding-left: 10%;
@@ -173,13 +150,13 @@ a:hover {
   padding: 13px 40px;
   transition-duration: 0.2s;
   font-weight: bold;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .tile a:hover span {
   background-color: #fffad6;
   padding: 13px 40px;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .background {
@@ -189,4 +166,14 @@ a:hover {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#gallery a {
+  margin-bottom: 15px;
 }

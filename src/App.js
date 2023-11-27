@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/Layout";
@@ -9,8 +7,6 @@ import Home from "./pages/Home";
 import Photos from "./pages/Photos";
 import NoPage from "./pages/NoPage";
 import Designs from "./pages/Designs";
-
-import fjGallery from "flickr-justified-gallery";
 
 function App() {
   return (

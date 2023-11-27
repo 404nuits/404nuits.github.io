@@ -1,55 +1,58 @@
-import { useEffect } from "react";
-import fjGallery from "flickr-justified-gallery";
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
+import { useEffect, useState } from "react";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 
 const Gallery = (props) => {
+  const [boxes, setBoxes] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
+    // --- PhotoSwipe Lightbox ---
+    let lightbox = new PhotoSwipeLightbox({
+      gallery: "#gallery",
+      children: "a",
+      preload: [1, 4],
+      pswpModule: () => import("photoswipe"),
+    });
 
-        // --- Flickr Justified Gallery ---
-        fjGallery(document.querySelectorAll('.fj-gallery'), {
-            itemSelector: '.fj-gallery-item',
-            gutter: { horizontal: 20, vertical: 30 }
-        });
-    
-        // --- PhotoSwipe Lightbox ---
-        let lightbox = new PhotoSwipeLightbox({
-          gallery: '#gallery',
-          children: 'a',
-          pswpModule: () => import('photoswipe')
-        });
+    lightbox.init();
 
-        lightbox.init();
+    return () => {
+      // --- PhotoSwipe Lightbox ---
+      lightbox.destroy();
+      lightbox = null;
+    };
+  }, []);
 
-        return () => {
-            // --- Flickr Justified Gallery ---
-            fjGallery(document.querySelectorAll('.fj-gallery'), 'destroy');
-
-            // --- PhotoSwipe Lightbox ---
-            lightbox.destroy();
-            lightbox = null;
-        };
-      }, []);
-    
-    
-    return (
-        <div id="gallery" className="fj-gallery pswp-gallery">
-            {props.images.map(image => (
-                    <a
-                        href={process.env.PUBLIC_URL + image.src}
-                        data-pswp-width={image.width}
-                        data-pswp-height={image.height}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="gallery-item fj-gallery-item"
-                        key={image.alt}
-                    >
-                        <img src={process.env.PUBLIC_URL + image.thumb} alt={image.alt} height="300" />
-                    </a>
-            ))}
-        </div>
-    );
+  return (
+    <div id="gallery">
+      {props.images.map((image, index) => (
+        <a
+          href={props.basepath + image.src + "?raw=true"}
+          data-pswp-width={image.width}
+          data-pswp-height={image.height}
+          target="_blank"
+          rel="noreferrer"
+          key={index}
+          style={{
+            height: "300px",
+            width: (300 * image.width) / image.height,
+          }}
+        >
+          <img
+            src={props.basepath + image.thumb + "?raw=true"}
+            alt={image.alt}
+            style={{ height: "300px" }}
+            onLoad={() => {
+              let temp = boxes;
+              let ratio = Math.round((image.width / image.height) * 10) / 10;
+              temp.push(ratio);
+              setBoxes(temp);
+            }}
+          />
+        </a>
+      ))}
+    </div>
+  );
 };
-  
-  export default Gallery;
+
+export default Gallery;

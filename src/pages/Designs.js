@@ -1,14 +1,21 @@
 import Gallery from "../Gallery";
-import files from "../jsons/designs.json";
-import { useEffect } from "react";
 
+import config from "../config.json";
+
+import { useEffect, useState } from "react";
 
 const Designs = () => {
-    useEffect(() => {
-        document.title = '404nuits - Designs';
-      }, []);
+  const [files, setFiles] = useState([]);
 
-    return <Gallery images={files} />;
-  };
-  
-  export default Designs;
+  useEffect(() => {
+    document.title = "404nuits - Designs";
+
+    fetch(config.designs_jsonpath)
+      .then((rep) => rep.json())
+      .then((data) => setFiles(data));
+  }, []);
+
+  return <Gallery images={files} basepath={config.baseurl} />;
+};
+
+export default Designs;

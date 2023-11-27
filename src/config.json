@@ -1,0 +1,5 @@
+{
+  "baseurl": "https://github.com/404nuits/pictures/blob/main",
+  "designs_jsonpath": "https://raw.githubusercontent.com/404nuits/pictures/main/jsons/designs.json",
+  "photos_jsonpath": "https://raw.githubusercontent.com/404nuits/pictures/main/jsons/photos.json"
+}
