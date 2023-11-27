@@ -19,7 +19,6 @@ const Item = (props) => {
       data-pswp-height={props.image.height}
       target="_blank"
       rel="noreferrer"
-      key={props.key}
       style={{
         height: props.height + "px",
         width: (props.height * props.image.width) / props.image.height,
