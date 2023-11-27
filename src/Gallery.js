@@ -2,15 +2,44 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 
-const Gallery = (props) => {
-  const [boxes, setBoxes] = useState([]);
+const Item = (props) => {
+  const [isShown, setIsShown] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShown(true);
+    }, props.timer);
+    return () => clearTimeout(timer);
+  }, [props.timer]);
+
+  return isShown ? (
+    <a
+      href={props.basepath + props.image.src + "?raw=true"}
+      data-pswp-width={props.image.width}
+      data-pswp-height={props.image.height}
+      target="_blank"
+      rel="noreferrer"
+      key={props.key}
+      style={{
+        height: props.height + "px",
+        width: (props.height * props.image.width) / props.image.height,
+      }}
+    >
+      <img
+        src={props.basepath + props.image.thumb + "?raw=true"}
+        alt={props.image.alt}
+        style={{ height: props.height + "px" }}
+      />
+    </a>
+  ) : null;
+};
+
+const Gallery = (props) => {
   useEffect(() => {
     // --- PhotoSwipe Lightbox ---
     let lightbox = new PhotoSwipeLightbox({
       gallery: "#gallery",
       children: "a",
-      preload: [1, 4],
       pswpModule: () => import("photoswipe"),
     });
 
@@ -26,30 +55,13 @@ const Gallery = (props) => {
   return (
     <div id="gallery">
       {props.images.map((image, index) => (
-        <a
-          href={props.basepath + image.src + "?raw=true"}
-          data-pswp-width={image.width}
-          data-pswp-height={image.height}
-          target="_blank"
-          rel="noreferrer"
+        <Item
+          image={image}
+          basepath={props.basepath}
+          height="300"
           key={index}
-          style={{
-            height: "300px",
-            width: (300 * image.width) / image.height,
-          }}
-        >
-          <img
-            src={props.basepath + image.thumb + "?raw=true"}
-            alt={image.alt}
-            style={{ height: "300px" }}
-            onLoad={() => {
-              let temp = boxes;
-              let ratio = Math.round((image.width / image.height) * 10) / 10;
-              temp.push(ratio);
-              setBoxes(temp);
-            }}
-          />
-        </a>
+          timer={index * 100}
+        />
       ))}
     </div>
   );
