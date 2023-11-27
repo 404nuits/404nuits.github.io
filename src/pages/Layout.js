@@ -10,7 +10,7 @@ const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.pageview(window.location.hash.replace("#", ""));
+    ReactGA.pageview(location.pathname);
   }, [location]);
 
   return (
