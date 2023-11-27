@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.e551b33a.css",
-    "main.js": "/static/js/main.97547344.js",
-    "static/js/981.326310c8.chunk.js": "/static/js/981.326310c8.chunk.js",
+    "main.css": "/static/css/main.1da56730.css",
+    "main.js": "/static/js/main.225a6dc6.js",
+    "static/js/945.81e9c845.chunk.js": "/static/js/945.81e9c845.chunk.js",
     "static/js/787.7660e021.chunk.js": "/static/js/787.7660e021.chunk.js",
+    "static/media/photos_tile.png": "/static/media/photos_tile.c9445a3c5df4d2a9eb7f.png",
+    "static/media/designs_tile.png": "/static/media/designs_tile.01331061c611eff9e729.png",
+    "static/media/logo.gif": "/static/media/logo.07340bd1fb05cfc9d24b.gif",
+    "static/media/dancing.gif": "/static/media/dancing.2b6495a6bfb15ccfe4af.gif",
     "static/media/rosie_brown_serif_demo-webfont.woff": "/static/media/rosie_brown_serif_demo-webfont.074d9ecf4de053002fb9.woff",
     "static/media/rosie_brown_serif_demo-webfont.woff2": "/static/media/rosie_brown_serif_demo-webfont.f77f4b0f01b2076340c9.woff2",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/rootme.svg": "/static/media/rootme.a942d81e62d044ccbbd81fdf8d5e018b.svg",
+    "static/media/github.svg": "/static/media/github.747c02a60378ccf49015d3d32125f433.svg",
     "index.html": "/index.html",
-    "main.e551b33a.css.map": "/static/css/main.e551b33a.css.map",
-    "main.97547344.js.map": "/static/js/main.97547344.js.map",
-    "981.326310c8.chunk.js.map": "/static/js/981.326310c8.chunk.js.map",
+    "main.1da56730.css.map": "/static/css/main.1da56730.css.map",
+    "main.225a6dc6.js.map": "/static/js/main.225a6dc6.js.map",
+    "945.81e9c845.chunk.js.map": "/static/js/945.81e9c845.chunk.js.map",
     "787.7660e021.chunk.js.map": "/static/js/787.7660e021.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e551b33a.css",
-    "static/js/main.97547344.js"
+    "static/css/main.1da56730.css",
+    "static/js/main.225a6dc6.js"
   ]
 }
