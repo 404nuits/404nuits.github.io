@@ -8,17 +8,12 @@ import Home from "./pages/Home";
 import Photos from "./pages/Photos";
 import NoPage from "./pages/NoPage";
 import Designs from "./pages/Designs";
-import { useEffect } from "react";
 
 const TRACKING_ID = "G-6Z7KF65YQY"; // OUR_TRACKING_ID
 
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   return (
     <HashRouter>
       <Routes>

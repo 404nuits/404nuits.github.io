@@ -25,7 +25,7 @@ const Home = () => {
       </div>
       <div className="row mb">
         <div className="tile from_bottom delay-2">
-          <Link to="/designs" class="row">
+          <Link to="/designs" className="row">
             <span>DESIGNS</span>
             <img
               alt="design background"

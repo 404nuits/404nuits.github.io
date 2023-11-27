@@ -2,9 +2,17 @@ import rootmeImage from "../images/rootme.svg";
 import githubImage from "../images/github.svg";
 import logoImage from "../images/logo.gif";
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 
 const Layout = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.hash.replace("#", ""));
+  }, [location]);
+
   return (
     <>
       <div className="row">
