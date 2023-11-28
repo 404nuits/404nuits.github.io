@@ -13,7 +13,7 @@ const TRACKING_ID = "G-6Z7KF65YQY"; // OUR_TRACKING_ID
 
 ReactGA.initialize(TRACKING_ID);
 
-function App() {
+export default function App() {
   return (
     <HashRouter>
       <Routes>
@@ -27,5 +27,3 @@ function App() {
     </HashRouter>
   );
 }
-
-export default App;
