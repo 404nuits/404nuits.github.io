@@ -38,7 +38,7 @@
 }
 
 .galleryItem {
-  animation: 1s slidein;
+  animation: 3s slidein;
 }
 
 @keyframes slidein {
