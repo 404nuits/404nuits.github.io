@@ -25,6 +25,7 @@ const Item = (props) => {
       }}
     >
       <img
+        className="galleryItem"
         src={props.basepath + props.image.thumb + "?raw=true"}
         alt={props.image.alt}
         style={{ height: props.height + "px" }}

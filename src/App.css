@@ -37,5 +37,18 @@
   }
 }
 
-#gallery {
+.galleryItem {
+  animation: 1s slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
